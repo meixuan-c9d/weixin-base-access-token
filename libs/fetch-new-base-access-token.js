@@ -10,13 +10,10 @@ module.exports = async (request, response) => {
       grant_type: 'client_credential',
       appid: process.env.NODE_ENV === 'production'
         ? process.env.WEIXIN_APP_ID
-        : process.env.WEIXIN_APP_ID_DEV
-      ,
+        : process.env.WEIXIN_APP_ID_DEV,
       secret: process.env.NODE_ENV === 'production'
         ? process.env.WEIXIN_APP_SECRET
         : process.env.WEIXIN_APP_SECRET_DEV
-      
-
     })
   )
   const responseConcat = await responseFetch.json()
