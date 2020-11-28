@@ -1,7 +1,7 @@
 const debug = require('../configs/debug')
 const querystring = require('querystring')
 const fetch = require('node-fetch')
-const cacheBaseAccessToken = require('../cache-base-access-token')
+const cacheBaseAccessToken = require('./cache-base-access-token')
 
 module.exports = async (request, response) => {
   const responseFetch = await fetch(

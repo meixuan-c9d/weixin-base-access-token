@@ -1,10 +1,10 @@
 const debug = require('./configs/debug')
-const promisifyAsync = require('./utils/promisify-async')
+const wrap = require('./utils/wrap')
 const fetchLocalBaseAccessToken = require('./libs/fetch-local-base-access-token')
 const fetchNewBaseAccessToken = require('./libs/fetch-new-base-access-token')
 const checkIfLocalBaseAccessTokenFound = require('./libs/check-if-local-base-access-token-found')
 
-module.exports = promisifyAsync(async (request, response, next) => {
+module.exports = wrap(async (request, response, next) => {
   const sessionId = request.params.sessionId  
   const ifLocalBaseAccessTokenFound = await checkIfLocalBaseAccessTokenFound(sessionId)
   
