@@ -5,7 +5,10 @@ const fetchNewBaseAccessToken = require('./libs/fetch-new-base-access-token')
 const checkIfLocalBaseAccessTokenFound = require('./libs/check-if-local-base-access-token-found')
 
 module.exports = wrap(async (request, response, next) => {
-  const sessionId = request.params.sessionId  
+  const sessionId = request.params.sessionId
+  debug.log(`
+  received sessionId ${sessionId}
+  `)
   const ifLocalBaseAccessTokenFound = await checkIfLocalBaseAccessTokenFound(sessionId)
   
   if (ifLocalBaseAccessTokenFound !== false) {
