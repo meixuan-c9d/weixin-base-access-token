@@ -1,5 +1,5 @@
-const debug = require('./configs/debug')
-const redisClient = require('./configs/redis')
+const debug = require('../configs/debug')
+const redisClient = require('../configs/redis')
 const { promisify } = require('util')
 
 module.exports = async ({
